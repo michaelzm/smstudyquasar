@@ -22,7 +22,10 @@ export default {
         question: newCard.textquestion,
         answer: newCard.textanswer,
         calculation_last_reviewed_date: date
-      });
+      }).then(res => {
+          console.log(res);
+        })
+        .catch(err => console.log(err.response.data));;
     }
   }
 };

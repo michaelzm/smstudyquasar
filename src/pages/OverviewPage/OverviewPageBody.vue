@@ -65,7 +65,7 @@ export default {
 <style lang="scss" scoped>
 .subject-selection {
   background-color: red;
-  height: 10vh;
+  height: 15vh;
 }
 .progress-chart {
   background-color: yellow;

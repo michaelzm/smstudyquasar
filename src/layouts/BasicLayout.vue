@@ -17,7 +17,7 @@
     </nav>
     <div class="nav-overlay"></div>
       <div class="page-container">
-            <router-view />
+            <router-view/>
       </div>
 
     </div>
@@ -36,6 +36,7 @@ export default {
     navLinks: undefined,
     body: undefined,
     navOverlay: undefined,
+    displayNavDrawer: false,
     };
   },
   methods: {
@@ -61,7 +62,7 @@ export default {
       this.navLinks = document.querySelectorAll(".nav-links li");
       this.body = document.querySelector("body");
       this.navOverlay = document.querySelector(".nav-overlay");
-    }
+    },
   },
   mounted() {
     this.initElements();
@@ -83,7 +84,7 @@ nav {
     font-size: 1.4rem;
     align-self: center;
     margin-left: 5vw;
-    z-index: 201
+    z-index: 200
   }
 }
 
@@ -94,6 +95,7 @@ nav {
 
   li {
     list-style: none;
+    margin: 0px;
   }
 
   a {
@@ -133,13 +135,14 @@ nav {
     right: 0px;
     height: 100vh;
     top: 0;
-    width: 30vw;
+    width: 50vw;
     display: none;
     flex-direction: column;
     justify-content: flex-start;
     transform: translateX(100%);
     transition: transform 0.4s linear;
-    z-index: 200;
+    z-index: 201;
+    margin: 0;
 
     li {
       padding: 7vh 0 3vh 0;
@@ -148,7 +151,7 @@ nav {
       opacity: 0;
 
       a {
-        font-size: 2rem;
+        font-size: 1.5rem;
       }
     }
   }

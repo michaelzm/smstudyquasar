@@ -1,7 +1,8 @@
 <template>
     <div class = "subject-selection-component" >
         <div class="info-text" @click="setDisplaySubjectListTo(true)">
-            Fach: {{this.currentSubject}}
+            Fach: 
+            {{this.currentSubject}}
         </div> 
         <div class="subject-selection-container" v-show="displaySubjectList">
             <ul id = "subject-list">
@@ -73,11 +74,13 @@ export default {
 }
 
 .subject-entry {
-    height: 5vh;
+    font-size: 1.5rem;
+    height: auto;
     border: 5px solid black;
     background-color: lightgreen;
 }
 .info-text {
+    font-size: 2rem;
     height: 100%;
 }
 </style>

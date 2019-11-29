@@ -3,9 +3,10 @@
    <nav>
       <h2 class="logo">SM2+ Karteikarten</h2>
       <ul class="nav-links">
-        <li><router-link to="/learn">Lernen</router-link></li>
+        <li><router-link to="/">Startseite</router-link></li>
+        <li><router-link :to="{ name: 'learn'}">Lernen</router-link></li>
         <li><router-link to="/create">Erstellen</router-link></li>
-        <li><a href="#">Kartenbrowser</a></li>
+        <li><router-link to="/browse">Karten durchsuchen</router-link></li>
         <li><a href="#">Logout</a></li>
       </ul>
       <div class="burger" v-on:click="openNav()">
@@ -15,8 +16,10 @@
       </div>
     </nav>
     <div class="nav-overlay"></div>
-      <div class="page-container"></div>
-      <router-view />
+      <div class="page-container">
+            <router-view />
+      </div>
+
     </div>
 </div>
 </template>
@@ -201,5 +204,9 @@ nav {
 
 .prevent-scroll {
   position: fixed;
+}
+
+.page-container {
+  height: 95vh;
 }
 </style>

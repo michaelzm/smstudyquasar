@@ -6,18 +6,25 @@ const routes = [
   },
   {
     path: '/create',
-    name: 'create',
+   
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import('layouts/BasicPageLayout.vue'),
-    children: [{ path: '', component: () => import('../pages/CreatePage.vue') }],
+    children: [{ path: '', name: 'create', component: () => import('../pages/CreatePage.vue') }],
   },
   {
     path: '/learn',
-    name: 'learn',
     component: () => import('layouts/BasicPageLayout.vue'),
-    children: [{ path: '', component: () => import('../pages/LearnPage.vue') }],
+    children: [{ path: '',
+      name: 'learn',
+     component: () => import('../pages/LearnPage.vue') }],
+  },
+  {
+    path: '/browse',
+
+    component: () => import('layouts/BasicPageLayout.vue'),
+    children: [{ path: '',     name: 'browse', component: () => import('../pages/CardBrowserPage.vue') }],
   },
 ];
 

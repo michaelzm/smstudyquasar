@@ -1,9 +1,9 @@
 <template>
-    <div class = "subjectSelection">
-        <div class="info-text" @click="toggleSubjectList()">
+    <div class = "subject-selection-component" >
+        <div class="info-text" @click="setDisplaySubjectListTo(true)">
             Fach: {{this.currentSubject}}
         </div> 
-        <div class="subject-selection-container hidden">
+        <div class="subject-selection-container" v-show="displaySubjectList">
             <ul id = "subject-list">
                 <li v-for="(item, index) in subjectList">
                     <div class="subject-entry" @click="chooseSubject(index)">
@@ -23,6 +23,7 @@ export default {
             subject_chosen: false,
             subjectSelectionHTML: undefined,
             currentSubject: undefined,
+            displaySubjectList: false,
         }
     },
     props: ["subjectList"],
@@ -31,18 +32,18 @@ export default {
             console.log(index)
             const selection = this.subjectList[index];
             this.$emit("subject-chosen", selection);
+            this.setDisplaySubjectListTo(false);
             this.subject_chosen = true;
             this.currentSubject = selection.subjectName;
-            this.toggleSubjectList();
-        },
-        toggleSubjectList() {
-            //remove .hidden class
-            this.subjectSelectionHTML.classList.toggle('hidden')
+ 
         },
         setHTMLElements() {
             const selectionElement = document.querySelector(".subject-selection-container");
             console.log(selectionElement)
             this.subjectSelectionHTML = selectionElement
+        },
+        setDisplaySubjectListTo(newBoolean) {
+          this.displaySubjectList = newBoolean;  
         },
     },
     mounted() {
@@ -52,7 +53,11 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.subject-selection {
+
+.subject-selection-component {
+    height: 100%;
+}
+.subject-selection-container {
     position: absolute;
     top: 10vh;
     left: 10vw;
@@ -70,7 +75,9 @@ export default {
 .subject-entry {
     height: 5vh;
     border: 5px solid black;
-    background-color: blue;
+    background-color: lightgreen;
 }
-
+.info-text {
+    height: 100%;
+}
 </style>

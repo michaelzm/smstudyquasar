@@ -1,10 +1,14 @@
 <template>
   <div class="overview">
     <div class="subject-selection">
-      <SubjectSelectionComponent v-bind:subjectList="subjectList"/>
+      <SubjectSelectionComponent v-bind:subjectList="subjectList" @subject-chosen="loadSubjectInformation"/>
     </div>
-    <div class="progress-chart">Anzeige des Erfolgs</div>
-    <div class="card-status">Informationen zu fälligen Karten</div>
+    <div class="progress-chart" v-if="subjectLoaded">
+        Anzeige des Erfolgs
+    </div>
+    <div class="card-status" v-if="subjectLoaded">
+        Informationen zu fälligen Karten
+    </div>
   </div>
 </template>
 <script>
@@ -14,7 +18,8 @@ export default {
   data() {
     return {
       selectedSubject: undefined,
-      subjectList: undefined
+      subjectList: undefined,
+      subjectLoaded: false,
     };
   },
   components: {
@@ -46,6 +51,10 @@ export default {
     },
     renameSubject() {
       //axios patch
+    },
+    loadSubjectInformation(subject) {
+        this.selectedSubject = subject
+        this.subjectLoaded = true;
     }
   },
   created() {
@@ -56,12 +65,15 @@ export default {
 <style lang="scss" scoped>
 .subject-selection {
   background-color: red;
+  height: 10vh;
 }
 .progress-chart {
   background-color: yellow;
+  height: 15vh;
 }
 
 .card-status {
   background-color: white;
+  height: 10vh;
 }
 </style>

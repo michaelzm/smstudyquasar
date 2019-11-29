@@ -3,7 +3,7 @@
    <nav>
       <h2 class="logo">SM2+ Karteikarten</h2>
       <ul class="nav-links">
-        <li><router-link to="/">Startseite</router-link></li>
+        <li><router-link to="/">Übersicht</router-link></li>
         <li><router-link :to="{ name: 'learn'}">Lernen</router-link></li>
         <li><router-link to="/create">Erstellen</router-link></li>
         <li><router-link to="/browse">Karten durchsuchen</router-link></li>
@@ -26,7 +26,7 @@
 
 <script>
 export default {
-  name: 'BasicPageLayout',
+  name: 'BasicLayout',
 
   data() {
     return {

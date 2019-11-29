@@ -1,15 +1,15 @@
 <template>
-  <div class="learn">
+  <div class="learnPage-entry">
     <Body></Body>
   </div>
 </template>
 
 <script>
-import Body from "../layouts/Learn/Body.vue";
+import Body from "./LearnPage/Body.vue";
 // @ is an alias to /src
 
 export default {
-  name: "learnpage",
+  name: "learnPage",
   components: {
     Body
   }

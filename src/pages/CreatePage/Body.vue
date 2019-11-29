@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import TextInput from "../../components/Create/Input";
+import TextInput from "../../components/CreateComponents/InputComponent";
 import axios from "axios";
 export default {
   components: {

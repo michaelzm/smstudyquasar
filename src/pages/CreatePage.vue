@@ -1,17 +1,17 @@
 <template>
-  <div class="createCard">
+  <div class="createCardPage-entry">
     <Header />
     <Body />
   </div>
 </template>
 
 <script>
-import Header from "../layouts/Create/Header.vue";
-import Body from "../layouts/Create/Body.vue";
-import Footer from "../layouts/Create/Footer.vue";
+import Header from "./CreatePage/Header.vue";
+import Body from "./CreatePage/Body.vue";
+import Footer from "./CreatePage/Footer.vue";
 
 export default {
-  name: "createpage",
+  name: "createPage",
   components: {
     Header,
     Body,
@@ -21,7 +21,7 @@ export default {
 </script>
 
 <style>
-.createCard {
+.createCardPage-entry {
   display: grid;
   grid-template-rows: 3vh 92vh;
   grid-template-columns: 50% 50%;

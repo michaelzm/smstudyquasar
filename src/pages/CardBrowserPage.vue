@@ -1,10 +1,10 @@
 <template>
-    <div class="cardbrowser">
+    <div class="cardBrowserPage-entry">
         <Body></Body>
     </div>
 </template>
 <script>
-import Body from '../layouts/CardBrowser/Body.vue'
+import Body from './CardBrowserPage/Body.vue'
 export default {
     components: {
         Body
@@ -13,7 +13,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.cardbrowser{
+.cardBrowserPage-entry{
     background-color: green;
     height: 100%;
     width: 100%;

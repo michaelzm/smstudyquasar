@@ -1,5 +1,5 @@
 <template>
-  <div class="header">Bitte Frage und Antwort eingeben:</div>
+  <div class="header">ausgewähltes Fach</div>
 </template>
 
 <script>

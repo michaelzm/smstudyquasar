@@ -18,9 +18,9 @@
 
 <script>
 import axios from "axios";
-import Cardfield from "../../components/Learn/Cardfield";
-import Cardinfo from "../../components/Learn/Cardinfo";
-import Answerbar from "../../components/Learn/Answerbar";
+import Cardfield from "../../components/LearnComponents/CardfieldComponent";
+import Cardinfo from "../../components/LearnComponents/CardinfoComponent";
+import Answerbar from "../../components/LearnComponents/AnswerbarComponent";
 export default {
   data() {
     return {

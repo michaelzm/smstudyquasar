@@ -1,5 +1,5 @@
 <template>
-  <div id="createCard">
+  <div class="createCard">
     <Header />
     <Body />
   </div>
@@ -21,7 +21,7 @@ export default {
 </script>
 
 <style>
-#createCard {
+.createCard {
   display: grid;
   grid-template-rows: 3vh 92vh;
   grid-template-columns: 50% 50%;

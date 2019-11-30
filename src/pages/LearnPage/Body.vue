@@ -1,5 +1,5 @@
 <template>
-  <div class="body-learn">
+  <div class="learn-page-body">
     <Cardinfo></Cardinfo>
     <Cardfield
       v-if="finishedLoading"
@@ -175,7 +175,7 @@ export default {
 </script>
 
 <style scoped>
-.body-learn {
+.learn-page-body {
   background-color: blue;
   height: 95vh;
   grid-area: body;

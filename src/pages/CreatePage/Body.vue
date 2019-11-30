@@ -1,5 +1,5 @@
 <template>
-  <div class="body">
+  <div class="create-page-body">
     <TextInput @add-card="addCard"></TextInput>
   </div>
 </template>
@@ -32,7 +32,7 @@ export default {
 </script>
 
 <style scoped>
-.body {
+.create-page-body {
   background-color: blue;
   grid-area: body;
 }

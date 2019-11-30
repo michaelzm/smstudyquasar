@@ -1,5 +1,5 @@
 <template>
-  <div class="overview">
+  <div class="overview-page-body">
     <div class="subject-selection">
       <SubjectSelectionComponent v-bind:subjectList="subjectList" @subject-chosen="loadSubjectInformation"/>
     </div>

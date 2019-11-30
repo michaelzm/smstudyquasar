@@ -1,5 +1,5 @@
 <template>
-<div class="text">
+<div class="card-browser-page-body">
     Karteikartenbrowser Test
     </div>    
 </template>

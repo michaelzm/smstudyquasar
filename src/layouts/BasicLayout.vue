@@ -2,20 +2,20 @@
 <div class ="app-layout">
    <nav>
       <h2 class="logo">SM2+ Karteikarten</h2>
-      <ul class="nav-links">
-        <li><router-link to="/">Übersicht</router-link></li>
-        <li><router-link :to="{ name: 'learn'}">Lernen</router-link></li>
-        <li><router-link to="/create">Erstellen</router-link></li>
-        <li><router-link to="/browse">Karten durchsuchen</router-link></li>
+      <ul class="nav-links" @click="toggleNav()">
+        <li><router-link to="/" >Übersicht</router-link></li>
+        <li><router-link :to="{ name: 'learn'}" >Lernen</router-link></li>
+        <li><router-link :to="{ name: 'create'}" >Erstellen</router-link></li>
+        <li><router-link :to="{ name: 'browse'}" >Karten durchsuchen</router-link></li>
         <li><a href="#">Logout</a></li>
       </ul>
-      <div class="burger" v-on:click="openNav()">
+      <div class="burger" v-on:click="toggleNav()">
         <div class="line1"></div>
         <div class="line2"></div>
         <div class="line3"></div>
       </div>
     </nav>
-    <div class="nav-overlay"></div>
+    <div class="nav-overlay" v-if="displayNavDrawer"></div>
       <div class="page-container">
             <router-view/>
       </div>
@@ -40,7 +40,8 @@ export default {
     };
   },
   methods: {
-    openNav() {
+    toggleNav() {
+      this.displayNavDrawer = !this.displayNavDrawer;
       this.nav.classList.toggle("nav-active");
       this.navLinks.forEach((link, index) => {
         if (link.style.animation) {
@@ -50,13 +51,11 @@ export default {
             9}s`;
         }
       });
-      this.navOverlay.classList.toggle("nav-open");
       this.body.classList.toggle("prevent-scroll");
       this.burger.classList.toggle("toggle");
     },
     initElements() {
       this.burger = document.querySelector(".burger");
-      var query = document.querySelector(".burger");
       this.nav = document.querySelector(".nav-links");
       this.navLinks = document.querySelectorAll(".nav-links li");
       this.body = document.querySelector("body");
@@ -139,10 +138,15 @@ nav {
     margin: 0;
 
     li {
-      padding: 7vh 0 3vh 0;
+      border-top: 1px solid black;
+      border-bottom: 1px solid black;
+      margin-top: 5vh;
+      margin-left: 5%;
       align-self: flex-start;
-      height: 5vh;
+      height: auto;
       opacity: 0;
+      width: 100%;
+      background-color: lightgrey;
 
       a {
         font-size: 1.5rem;
@@ -161,7 +165,7 @@ nav {
   display: flex;
 }
 
-.nav-open {
+.nav-overlay {
   background: rgba(11, 14, 14, .4);
   position: fixed;
   top: 0;

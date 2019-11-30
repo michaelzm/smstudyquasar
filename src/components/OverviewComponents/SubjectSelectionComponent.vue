@@ -4,7 +4,7 @@
             Fach: 
             {{this.currentSubject}}
         </div> 
-        <div class="subject-selection-container" v-show="displaySubjectList">
+        <div class="subject-selection-list-container" v-show="displaySubjectList">
             <ul id = "subject-list">
                 <li v-for="(item, index) in subjectList">
                     <div class="subject-entry" @click="chooseSubject(index)">
@@ -58,10 +58,13 @@ export default {
 .subject-selection-component {
     height: 100%;
 }
-.subject-selection-container {
+.subject-selection-list-container {
     position: absolute;
-    top: 10vh;
-    left: 10vw;
+    top: 5vh;
+    left: 0vw;
+    width: 100vw;
+    height: 95vh;
+    background: white;
 }
 
 #subject-list {

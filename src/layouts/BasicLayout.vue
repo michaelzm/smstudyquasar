@@ -49,7 +49,6 @@ export default {
           link.style.animation = link.style.animation = `navLinkFade 0.5s ease forwards ${index /
             9}s`;
         }
-        console.log(index / 7);
       });
       this.navOverlay.classList.toggle("nav-open");
       this.body.classList.toggle("prevent-scroll");
@@ -92,11 +91,6 @@ nav {
   display: flex;
   justify-content: space-around;
   width: 50vw;
-
-  li {
-    list-style: none;
-    margin: 0px;
-  }
 
   a {
     color: black;

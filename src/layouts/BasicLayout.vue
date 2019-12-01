@@ -2,7 +2,7 @@
 <div class ="app-layout">
    <nav>
       <h2 class="logo">SM2+ Karteikarten</h2>
-      <ul class="nav-links" @click="toggleNav()">
+      <ul class="nav-links">
         <li><router-link to="/" >Übersicht</router-link></li>
         <li><router-link :to="{ name: 'learn'}" >Lernen</router-link></li>
         <li><router-link :to="{ name: 'create'}" >Erstellen</router-link></li>
